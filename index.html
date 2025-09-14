@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opi Biswas - Portfolio</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+        integrity="dika512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+        :root{
+            --yellow:#f9ca24;
+        }
+
+        *{
+            font-family: 'Nunito', sans-serif;
+            margin:0; padding:0;
+            box-sizing: border-box;
+            text-decoration: none;
+            outline: none; border:none;
+            transition: all .2s linear;
+        }
+
+        *::selection{
+            background:var(--yellow);
+            color:#333;
+        }
+
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        html::-webkit-scrollbar{
+            width:1.4rem;
+        }
+
+        html::-webkit-scrollbar-track{
+            background:#222;
+        }
+
+        html::-webkit-scrollbar-thumb{
+            background:var(--yellow);
+        }
+
+        body{
+            background:#111;
+            overflow-x: hidden;
+            padding-left: 35rem;
+        }
+
+        section{
+            min-height: 100vh;
+            padding:1rem;
+        }
+
+        .btn{
+            padding:.7rem 3rem;
+            background:#333;
+            color:#fff;
+            cursor: pointer;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            border-radius: 5rem;
+        }
+
+        .btn i{
+            padding:0 .5rem;
+            font-size: 1.8rem;
+        }
+
+        .btn:hover{
+            background:var(--yellow);
+        }
+
+        .heading{
+            text-align: center;
+            margin:0 6rem;
+            font-size: 4rem;
+            padding:1rem;
+            border-bottom: .1rem solid #fff4;
+            color:#fff;
+            margin-bottom: -4rem;
+        }
+
+        .heading span{
+            color:var(--yellow);
+        }
+
+        header{
+            position: fixed;
+            top:0; left:0;
+            z-index: 1000;
+            height:100%;
+            width:35rem;
+            background:#1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            text-align: center;
+            padding-top: 3rem;
+        }
+
+        header .user img{
+            height:17rem;
+            width:17rem;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border:.4rem solid var(--yellow);
+        }
+
+        header .user .name{
+            font-size: 3.5rem;
+            color:#fff;
+        }
+
+        header .user .post{
+            font-size: 1.6rem;
+            color:#eee;
+        }
+
+        header .navbar{
+            width:100%;
+        }
+
+        header .navbar ul{
+            list-style: none;
+            padding:1rem 1rem;
+        }
+
+        header .navbar ul li a{
+            display: block;
+            padding:1rem;
+            margin:1.5rem 0;
+            background:#333;
+            color:#fff;
+            font-size: 1.5rem;
+            border-radius: 3rem;
+        }
+
+        header .navbar ul li a:hover{
+            background:var(--yellow);
+        }
+
+        #menu{
+            position: fixed;
+            top:2rem; right:2rem;
+            background:#333;
+            color:#fff;
+            cursor: pointer;
+            font-size: 2.5rem;
+            padding:1rem 1.5rem;
+            z-index: 1000;
+            display: none;
+        }
+
+        .home{
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            padding:0 15rem;
+        }
+
+        .home h3{
+            font-size: 2.5rem;
+            color:#fff;
+        }
+
+        .home h1{
+            font-size:5rem;
+            color:#fff;
+        }
+
+        .home h1 span{
+            color:var(--yellow);
+        }
+
+        .home p{
+            font-size:1.5rem;
+            color:#eee;
+            padding: 1.2rem 0;
+            text-align: justify;
+        }
+
+        .education .box-container .edu1{
+            color: #eee;
+            margin:-2rem 7rem;
+            font-size: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            display: flex;
+            border-bottom: .1rem solid #fff4;
+        }
+
+        .education .box-container .educ{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding:1rem 0;
+            margin-top: 2rem;
+            padding-left: 3rem;
+        }
+
+        .education .box-container .cert{
+            color: #eee;
+            margin:5rem 7rem;
+            font-size: 1.5rem;
+            padding-left: 3.5rem;
+            justify-content: center;
+            width:88rem;
+            flex-wrap: wrap;
+            border-left: .2rem solid #fff;
+            margin-left: 11rem;
+            position: relative;
+        }
+
+        .education .box-container .cert i{
+            position: absolute;
+            top:-1.5rem; left:-2.5rem;
+            height:5rem;
+            width: 5rem;
+            border-radius: 50%;
+            line-height: 5rem;
+            text-align: center;
+            font-size: 2rem;
+            color:#fff;
+            background:var(--yellow);
+        }
+
+        .education .box-container .box{
+            width:38rem;
+            margin:4rem 1rem;
+            padding-left: 4rem;
+            border-left: .2rem solid #fff;
+            position: relative;
+        }
+
+        .education .box-container .box span{
+            font-size: 1.3rem;
+            background:#222;
+            color:#fff;
+            border-radius: 5rem;
+            padding:.5rem 1.8rem;
+        }
+
+        .education .box-container p span,.projects .box-container a span,
+        .education .box-container .box a span, .res .box-container a span{
+            font-size: 1.3rem;
+            background:#222;
+            color:#f9ca24;
+            border-radius: 5rem;
+            padding:0 1.8rem;
+        }
+
+        .education .box-container .box h3{
+            font-size: 1.7rem;
+            color:#fff;
+            padding-top: 1.5rem;
+        }
+
+        .education .box-container .box p, .Experience .box-container p,
+        .res .box-container p, .projects .box-container p,
+        .portfolio .box-container p{
+            font-size: 1.5rem;
+            color:#eee;
+            padding: .5rem 0;
+            width: 95%;
+            text-align: justify;
+        }
+
+        .education .box-container .box i{
+            position: absolute;
+            top:-1.5rem; left:-2.5rem;
+            height:5rem;
+            width: 5rem;
+            border-radius: 50%;
+            line-height: 5rem;
+            text-align: center;
+            font-size: 2rem;
+            color:#fff;
+            background:var(--yellow);
+        }
+
+        .Experience .box-container, .res .box-container,
+        .projects .box-container, .portfolio .box-container{
+            margin:5rem 8rem;
+            padding-left: 4rem;
+            position: relative;
+            color: #eee;
+        }
+
+        .Experience .box-container h3, .res .box-container h3,
+        .projects .box-container h3{
+            font-size: 2.5rem;
+            color:#f9ca24;
+            padding: 1.5rem .6rem;
+        }
+
+        .Experience .box-container span, .res .box-container span,
+        .projects .box-container span{
+            font-size: 1.3rem;
+            background:#222;
+            color:#fff;
+            border-radius: 5rem;
+            padding:.5rem 2.5rem;
+        }
+
+        .res .box-container .skill p{
+            margin-bottom: 2.2rem;
+            font-size: 1.6rem;
+        }
+
+        .res .box-container .skill p span{
+            border: 10px;
+            font-size: 1.6rem;
+        }
+
+        .portfolio .box-container{
+            margin-top: 8rem;
+        }
+
+        .portfolio .box-container li{
+            font-size: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        .portfolio{
+            min-height: 38vh;
+            padding:1rem;
+        }
+
+        .contact .row{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact .row .content{
+            flex:1 1 30rem;
+            margin-top: -8rem;
+            padding-left:4rem;
+            padding-bottom: 0;
+        }
+
+        .contact .row form{
+            flex:1 1 45rem;
+            padding:2rem;
+            margin:2rem;
+            margin-right: 12rem;
+            margin-top: 5rem;
+        }
+
+        .contact .row form .box{
+            padding:1.5rem;
+            margin:1rem 0;
+            background:rgba(131, 130, 130, 0.2);
+            color:#fff;
+            text-transform: none;
+            font-size: 1.6rem;
+            width:100%;
+        }
+
+        .contact .row form .box::placeholder{
+            text-transform: capitalize;
+        }
+
+        .contact .row form .message{
+            height: 15rem;
+            resize: none;
+        }
+
+        .contact .row .content .title{
+            text-transform: uppercase;
+            color:#fff;
+            margin-left: 3rem;
+            font-size: 2.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        .contact .row .content .info h3{
+            display: flex;
+            align-items: center;
+            font-size: 1.6rem;
+            color:#eee;
+            padding:1rem ;
+            margin-left: 3rem;
+            font-weight: normal;
+        }
+
+        .contact .row .content .info h3 i{
+            padding-right: 1rem;
+            color:var(--yellow);
+        }
+
+        .top{
+            position: fixed;
+            bottom:7.5rem; right: 2rem;
+            z-index: 100;
+            display: none;
+        }
+
+        /* Media Queries */
+        @media (max-width:1302px){
+            html{
+                font-size: 55%;
+            }
+            header{
+                padding-left:1rem;
+            }
+            .home{
+                padding:1rem 7rem;
+                padding-right: 11rem;
+            }
+        }
+
+        @media (max-width:780px){
+           header{
+               left:-80%;
+           } 
+           #menu{
+               display: block;
+           } 
+           header.toggle{
+            left:0%;
+           }
+           body{
+               padding:5rem;
+           }
+        .education .box-container, .Experience .box-container, .res .box-container,
+         .projects .box-container, .portfolio .box-container{
+            margin:5rem -1rem;
+        }
+        .home{
+            margin-top:-6rem;
+        }
+        } 
+
+        @media (max-width:426px){
+            header{
+                left:-80%;
+            } 
+            .home{
+                padding-right: 2rem;
+                margin-left: -5rem;
+            }
+            .contact .row .content{
+                margin-top: 1.5rem;
+                }
+            .contact .row form{
+                margin-top: -1rem;
+                }
+            .heading{
+                    margin:0 3rem;
+                }
+            html{
+                    font-size: 40%;
+                }
+            .education .box-container, .Experience .box-container, .res .box-container,
+                .projects .box-container, .portfolio .box-container{
+                   margin:1rem -3rem;
+                }
+                .education .box-container .cert{
+                    margin:5rem;
+                    padding-left: 3.5rem;
+                    margin-left: 4rem;
+                }
+         } 
+    </style>
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+    <header>
+        <div class="user">
+            <img src="opi.jpg" alt="">
+            <h3 class="name">Opi Biswas</h3>
+            <p class="post">Computer Science Student<br>
+                University of Chittagong</p>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#active">Research & Skills</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#award">Achievements & Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- header section ends -->
+
+    <div id="menu" class="fas fa-bars"></div>
+
+    <!-- home section starts  -->
+    <section class="home" id="home">
+        <h3>Hello, Everyone!</h3>
+        <h1>I'M <span>Opi Biswas</span></h1>
+        <p>I completed my Bachelor's degree with Honors in Computer Science and Engineering from University of Chittagong. The immense future potential of Machine Learning and Artificial Intelligence has always fascinated me. I aim to expand my knowledge in this realm further as well as apply my skills in programming and critical thinking as a researcher pursuing doctoral studies.</p>
+        
+        <h3><i class="fas fa-search-plus" style="color:#3b7db3;"></i> Research Interest:</h3>
+        <p><i class="fas fa-brain" style="color:#d3b210;"></i> Machine Learning & Artificial Intelligence<br>
+            <i class="fas fa-eye" style="color:#e7a375;"></i> Computer Vision<br>
+            <i class="fas fa-image" style="color:#72aa6d;"></i> Deep Learning & Pattern Recognition<br>
+            <i class="fas fa-search" style="color:#a2d1e2;"></i> Image Processing<br>
+            <i class="fas fa-language" style="color:#cd79c1;"></i> Natural Language Processing
+        </p>
+        
+        <a target="_blank" href="cv.pdf"><button class="btn"> My Academic CV <i class="fas fa-download"></i></button></a>
+        <br><br>
+        <h3>Quote </h3>
+        <p>| "Working 16 hours a day, 7 day's a week, 52 weeks in a year and people still calling me lucky." - Elon Musk</p>
+    </section>
+
+    <!-- education section starts  -->
+    <section class="education" id="education">
+        <h1 class="heading"><img src="img/education.png" alt="" style="height: 4rem;"> Education </h1>
+
+        <div class="box-container">
+            <div class="educ">
+                <div class="box">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Jan 2020 - Aug 2025 (Expected)</span>
+                    <h3>University of Chittagong</h3>
+                    <p>B.Sc. in Computer Science and Engineering<br>
+                        CGPA: 3.62 / 4.00<br>
+                        Location: Chittagong, Bangladesh</p>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Jun 2017 - May 2019</span>
+                    <h3>Saidpur Government Science College</h3>
+                    <p>Higher Secondary Certificate (HSC) in Science<br>
+                        GPA: A+ (5.00 / 5.00)<br>
+                        Location: Saidpur, Nilphamari</p>
+                </div>
+            </div>
+
+            <div class="educ">
+                <div class="box">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Jan 2015 - Feb 2017</span>
+                    <h3>Lions School and College</h3>
+                    <p>Secondary School Certificate (SSC) in Science<br>
+                        GPA: Golden A+ (5.00 / 5.00)<br>
+                        Location: Saidpur, Nilphamari</p>
+                </div>
+            </div>
+
+            <p class="edu1">Certifications</p>
+            <div class="cert">
+                <i class="fas fa-certificate"></i>
+                <p>[1] Full Stack Web Development Certification, EDGE Program <a href="#"><span>[ Certificate ]</span></a>
+                    <br>[2] Data Analysis with Excel Certification, Futurenation and UNDP Bangladesh <a href="#"><span>[ Certificate ]</span></a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- research & skills section starts -->
+    <section class="res" id="active">
+        <h1 class="heading"><img src="img/research.png" alt="" style="height: 4rem;"> Research <span>& Skills</span></h1>
+        <div class="box-container">
+            <h3>Undergraduate Thesis </h3>
+            <p>Currently working on <b>"A Hybrid YOLOv5 and Graph-Based Segmentation Framework for Bangladeshi License Plate Recognition"</b>. This research focuses on developing novel computer vision techniques combining state-of-the-art object detection with graph-based segmentation methods, addressing challenges specific to Bangladeshi license plate formats and conditions.</p>
+
+            <h3>Problem Solving & Programming</h3>
+            <p>Strong foundation in competitive programming with 600+ problems solved across various online judges. Developed algorithmic thinking and data structure expertise through consistent practice and participation in programming contests.</p>
+
+            <div class="skill">
+                <h3><img src="img/pencil.png" alt="" style="height: 2.5rem;"> Technical Skills</h3>
+                <p><span>Programming Languages :</span> C++, Java, Python, JavaScript, SQL</p>
+                <p><span>Web Development :</span> HTML, CSS, React.js, Node.js</p>
+                <p><span>Machine Learning Libraries :</span> NumPy, Pandas, Scikit-Learn, spaCy, Keras, TensorFlow, PyTorch</p>
+                <p><span>Tools & Technologies :</span> Git, MySQL, Android SDK, TensorFlow Lite</p>
+                <p><span>Database Management :</span> MySQL</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- projects section starts -->
+    <section class="projects" id="project">
+        <h1 class="heading"><img src="img/puzzle.png" alt="" style="height: 4rem;"> Projects </h1>
+        <div class="box-container">
+            <h3>Research Lab Management System</h3>
+            <span>Group Project, 2023</span>
+            <p>Developed a comprehensive web-based platform to streamline research lab operations, including member profiles, publication tracking, event scheduling, and resource sharing. Integrated role-based access control for administrators and implemented advanced search functionality for efficient data retrieval. Followed modular architecture for scalability and long-term maintenance.</p>
+            <p>Code is available on: <a href="https://github.com/Opibiswas/Research_lab_management_system"><span>[GitHub]</span></a></p>
+            <p>Tech Stack: HTML, CSS, JavaScript, MySQL</p>
+            <br>
+
+            <h3>Rice Leaf Disease Detection App</h3>
+            <span>Individual Project, 2024</span>
+            <p>Developed an Android mobile application to identify and classify rice leaf diseases using machine learning. Trained a Convolutional Neural Network (CNN) model to detect diseases like Bacterial Blight and Leaf Smut from leaf images. Integrated TensorFlow Lite for real-time on-device inference without requiring internet access.</p>
+            <p>Code is available on: <a href="https://github.com/Opibiswas/MyMobileApp"><span>[GitHub]</span></a></p>
+            <p>Tech Stack: Android SDK, Java, TensorFlow Lite</p>
+            <br>
+
+        
+        </div>
+    </section>
+
+    <!-- achievements section starts -->
+    <section class="portfolio" id="award">
+        <h1 class="heading"><img src="img/medal.png" alt="" style="height: 4rem;"> Achievements <span>& Extra Curricular Activities</span> </h1>
+        <div class="box-container">
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: var(--yellow); font-size: 2.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--yellow); padding-bottom: 0.5rem; display: inline-block;">Academic Achievements</h3>
+                <ul>
+                    <li>2nd Runner-Up, Intra Department Database Project Showcasing, University of Chittagong (Aug 2023)</li>
+                    <!-- <li>Maintained consistent academic performance with CGPA 3.62/4.00</li>
+                    <li>Achieved Golden A+ in both HSC and SSC examinations</li> -->
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: var(--yellow); font-size: 2.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--yellow); padding-bottom: 0.5rem; display: inline-block;">Leadership & Campus Involvement</h3>
+                <ul>
+                    <li>General Secretary - Nilphamari Student Association, University of Chittagong</li>
+                    <li>Vice President - Shaheed Abdur Rab Hall Sports Club, University of Chittagong</li>
+                    <li>Vice President - Shaheed Abdur Rab Hall Career Club, University of Chittagong</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: var(--yellow); font-size: 2.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--yellow); padding-bottom: 0.5rem; display: inline-block;">Volunteer Activities</h3>
+                <ul>
+                    <li>Volunteer - Junior Programming Contest (BCC) organized by Bangladesh Computer Council (2025)</li>
+                    <li>Technical Support - IT Fiesta 2024 (CUSS), Inter-University Programming Contest (2024)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section starts -->
+    <section class="contact" id="contact">
+        <h1 class="heading"> <span>Contact</span> me </h1>
+        <div class="row">
+            <div class="content">
+                <h3 class="title">contact info</h3>
+                <div class="info">
+                    <h3> <i class="fas fa-envelope"></i> opibiswas54@gmail.com</h3>
+                    <a target="_blank" href="https://www.linkedin.com/in/opi-biswas-cse">
+                        <h3> <i class="fab fa-linkedin-in"></i>linkedin.com/in/opi-biswas-cse</h3>
+                    </a>
+                    <a target="_blank" href="https://github.com/Opibiswas">
+                        <h3> <i class="fab fa-github"></i>https://github.com/Opibiswas</h3>
+                    </a>
+                    <h3> <i class="fas fa-phone"></i> +880 1793938041</h3>
+                    <h3> <i class="fas fa-map-marker-alt"></i> Chittagong, Bangladesh</h3>
+                </div>
+            </div>
+
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <input id="nam" name="Name" type="text" placeholder="name" class="box">
+                <input id="emaill" name="Email" type="email" placeholder="email" class="box">
+                <textarea name="Text" id="msg" cols="30" rows="10" class="box message" placeholder="message"></textarea>
+                <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i> </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- scroll top button -->
+    <a href="#home" class="top">
+        <img src="img/scroll-top-img.png" alt="">
+    </a>
+
+    <!-- jquery cdn link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <!-- custom js file link -->
+    <script>
+        $(document).ready(function(){
+            $('#menu').click(function(){
+                $(this).toggleClass('fa-times');
+                $('header').toggleClass('toggle');
+                console.log("hi");
+            });
+            
+            $(window).on('scroll load',function(){
+                $('#menu').removeClass('fa-times');
+                $('header').removeClass('toggle');
+                
+                if($(window).scrollTop() > 0){
+                    $('.top').show();
+                }else{
+                    $('.top').hide();
+                }
+            });
+            
+            // smooth scrolling 
+            $('a[href*="#"]').on('click',function(e){
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop : $($(this).attr('href')).offset().top,
+                }, 500, 'linear');
+            });
+        });
+
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "indeedtomorrow@gmail.com",
+                Password: "BA41E2BC3988A05543AD36F53E616AFB0D7A",
+                To: 'opibiswas54@gmail.com',
+                From: "indeedtomorrow@gmail.com",
+                Subject: "New Message from Portfolio Website",
+                Body: "Name: " + document.getElementById("nam").value
+                    + "<br> Email: " + document.getElementById("emaill").value
+                    + "<br> Message: " + document.getElementById("msg").value
+            }).then(
+                message => alert("Message sent successfully!")
+            );
+        }
+    </script>
+
+</body>
+</html>
