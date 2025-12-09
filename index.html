@@ -36,7 +36,7 @@
         }
 
         html{
-            font-size: 62.5%;
+            font-size: 68.75%;
             overflow-x: hidden;
         }
 
@@ -340,6 +340,70 @@
             min-height: 38vh;
             padding:1rem;
         }
+        /* Add these CSS rules to your existing <style> section */
+
+/* Coursework specific styles */
+.portfolio .course-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.portfolio .course-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.portfolio .course-category {
+    background: #222;
+    padding: 2rem;
+    border-radius: .5rem;
+    border: .1rem solid #333;
+    transition: all .3s ease;
+}
+
+.portfolio .course-category:hover {
+    border-color: var(--yellow);
+    transform: translateY(-5px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.3);
+}
+
+.portfolio .course-category h3 {
+    color: var(--yellow);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: .2rem solid var(--yellow);
+    padding-bottom: .5rem;
+}
+
+.portfolio .course-category p {
+    color: #eee;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+/* Mobile responsiveness for coursework */
+@media (max-width: 780px) {
+    .portfolio .course-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio .course-column {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 426px) {
+    .portfolio .course-category {
+        padding: 1.5rem;
+    }
+    
+    .portfolio .course-category h3 {
+        font-size: 1.8rem;
+    }
+}
 
         .contact .row{
             display: flex;
@@ -499,6 +563,7 @@
                 <li><a href="#active">Research & Skills</a></li>
                 <li><a href="#project">Projects</a></li>
                 <li><a href="#award">Achievements & Activities</a></li>
+                <li><a href="#coursework">Coursework</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -512,7 +577,7 @@
     <section class="home" id="home">
         <h3>Hello, Everyone!</h3>
         <h1>I'M <span>Opi Biswas</span></h1>
-        <p>I completed my Bachelor's degree with Honors in Computer Science and Engineering from University of Chittagong. The immense future potential of Machine Learning and Artificial Intelligence has always fascinated me. I aim to expand my knowledge in this realm further as well as apply my skills in programming and critical thinking as a researcher pursuing doctoral studies.</p>
+        <p>I completed my Bachelor's degree with Honors in Computer Science and Engineering from University of Chittagong with an interest in Artificial Intelligence, Machine Learning and Computer Vision. I have developed practical skills in Python, C, C++ and Java through research and project work.</p>
         
         <h3><i class="fas fa-search-plus" style="color:#3b7db3;"></i> Research Interest:</h3>
         <p><i class="fas fa-brain" style="color:#d3b210;"></i> Machine Learning & Artificial Intelligence<br>
@@ -525,7 +590,7 @@
         <a target="_blank" href="cv.pdf"><button class="btn"> My Academic CV <i class="fas fa-download"></i></button></a>
         <br><br>
         <h3>Quote </h3>
-        <p>| "Working 16 hours a day, 7 day's a week, 52 weeks in a year and people still calling me lucky." - Elon Musk</p>
+        <p>|| “Dream is not that which you see while sleeping it is something that does not let you sleep.”</p>
     </section>
 
     <!-- education section starts  -->
@@ -534,14 +599,27 @@
 
         <div class="box-container">
             <div class="educ">
-                <div class="box">
+                 <div class="box">
                     <i class="fas fa-graduation-cap"></i>
-                    <span>Jan 2020 - Aug 2025 (Expected)</span>
+                    <span>Aug 2025 - Dec 2026 (Expected)</span>
                     <h3>University of Chittagong</h3>
-                    <p>B.Sc. in Computer Science and Engineering<br>
-                        CGPA: 3.62 / 4.00<br>
+                    <p>M.Sc. in Computer Science and Engineering<br>
+                        <!-- CGPA: 3.62 / 4.00<br> -->
                         Location: Chittagong, Bangladesh</p>
                 </div>
+
+                <div class="box">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Jan 2020 - Aug 2025 </span>
+                    <h3>University of Chittagong</h3>
+                    <p>B.Sc. in Computer Science and Engineering<br>
+                        CGPA: 3.63 / 4.00<br>
+                        Location: Chittagong, Bangladesh</p>
+                </div>
+
+            </div>
+
+            <div class="educ">
 
                 <div class="box">
                     <i class="fas fa-graduation-cap"></i>
@@ -551,9 +629,7 @@
                         GPA: A+ (5.00 / 5.00)<br>
                         Location: Saidpur, Nilphamari</p>
                 </div>
-            </div>
 
-            <div class="educ">
                 <div class="box">
                     <i class="fas fa-graduation-cap"></i>
                     <span>Jan 2015 - Feb 2017</span>
@@ -578,19 +654,19 @@
     <section class="res" id="active">
         <h1 class="heading"><img src="img/research.png" alt="" style="height: 4rem;"> Research <span>& Skills</span></h1>
         <div class="box-container">
-            <h3>Undergraduate Thesis </h3>
-            <p>Currently working on <b>"A Hybrid YOLOv5 and Graph-Based Segmentation Framework for Bangladeshi License Plate Recognition"</b>. This research focuses on developing novel computer vision techniques combining state-of-the-art object detection with graph-based segmentation methods, addressing challenges specific to Bangladeshi license plate formats and conditions.</p>
+            <h3>Publication (Accepted to ICCIT-2025 conference)</h3>
+            <p><b>"A Hybrid YOLOv5 and Graph-Based Segmentation Framework for Bangladeshi License Plate Recognition"</b>. This research focuses on developing novel computer vision techniques combining state-of-the-art object detection with graph-based segmentation methods, addressing challenges specific to Bangladeshi license plate formats and conditions.</p>
 
             <h3>Problem Solving & Programming</h3>
             <p>Strong foundation in competitive programming with 600+ problems solved across various online judges. Developed algorithmic thinking and data structure expertise through consistent practice and participation in programming contests.</p>
 
             <div class="skill">
                 <h3><img src="img/pencil.png" alt="" style="height: 2.5rem;"> Technical Skills</h3>
-                <p><span>Programming Languages :</span> C++, Java, Python, JavaScript, SQL</p>
-                <p><span>Web Development :</span> HTML, CSS, React.js, Node.js</p>
+                <p><span>Programming Languages :</span> C, C++, Python, Java, </p>
+                <p><span>Web Development :</span> HTML, CSS, PHP, JavaScript</p>
                 <p><span>Machine Learning Libraries :</span> NumPy, Pandas, Scikit-Learn, spaCy, Keras, TensorFlow, PyTorch</p>
-                <p><span>Tools & Technologies :</span> Git, MySQL, Android SDK, TensorFlow Lite</p>
-                <p><span>Database Management :</span> MySQL</p>
+                <p><span>Tools & Technologies :</span> Git, Google Colab, Code Blocks, Android Studio, Visual Studio Code, LaTeX. </p>
+                
             </div>
         </div>
     </section>
@@ -633,9 +709,11 @@
             <div style="margin-bottom: 3rem;">
                 <h3 style="color: var(--yellow); font-size: 2.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--yellow); padding-bottom: 0.5rem; display: inline-block;">Leadership & Campus Involvement</h3>
                 <ul>
+                    <li>Vice President - Shaheed Abdur Rab Hall Career Club, University of Chittagong</li>
                     <li>General Secretary - Nilphamari Student Association, University of Chittagong</li>
                     <li>Vice President - Shaheed Abdur Rab Hall Sports Club, University of Chittagong</li>
-                    <li>Vice President - Shaheed Abdur Rab Hall Career Club, University of Chittagong</li>
+                    <li>Member - Computer Vision & Image Processing (CVIP) Research Group</li>
+                    
                 </ul>
             </div>
 
@@ -647,9 +725,62 @@
                 </ul>
             </div>
         </div>
+        
+    <h1 class="heading"><img src="img/education.png" alt="" style="height: 4rem;"> Relevant <span>Coursework</span></h1>
+<div class="box-container">
+    <div class="course-grid">
+        <div class="course-column">
+            <div class="course-category">
+                <h3>Programming & Software Development</h3>
+                <p>• Structured Programming Language<br>
+                   • Object-Oriented Programming Language<br>
+                   • Data Structures<br>
+                   • Design and Analysis of Algorithms<br>
+                   • Software Engineering and Design Patterns<br>
+                   • Compiler Design</p>
+            </div>
+
+            <div class="course-category">
+                <h3>Computer Systems & Architecture</h3>
+                <p>• Introduction to Computer Systems<br>
+                   • Digital Logic Design<br>
+                   • Computer Architecture<br>
+                   • Microprocessors<br>
+                   • Computer Interfacing and Microcontroller<br>
+                   • Operating Systems</p>
+            </div>
+
+            <div class="course-category">
+                <h3>Theory & Database</h3>
+                <p>• Theory of Computation<br>
+                   • Database Systems</p>
+            </div>
+        </div>
+
+        <div class="course-column">
+            <div class="course-category">
+                <h3>Networks & Security</h3>
+                <p>• Data Communication<br>
+                   • Computer Networks<br>
+                   • Information Security<br>
+                   • Distributed and Cloud Computing</p>
+            </div>
+
+            <div class="course-category">
+                <h3>AI & Machine Learning</h3>
+                <p>• Artificial Intelligence<br>
+                   • Machine Learning<br>
+                   • Digital Image Processing<br>
+                   • Computer Graphics<br>
+                   • Modeling and Simulation</p>
+            </div>
+        </div>
+    </div>
+</div>
+
     </section>
 
-    <!-- contact section starts -->
+     <!-- contact section starts -->
     <section class="contact" id="contact">
         <h1 class="heading"> <span>Contact</span> me </h1>
         <div class="row">
@@ -679,7 +810,7 @@
 
     <!-- scroll top button -->
     <a href="#home" class="top">
-        <img src="img/scroll-top-img.png" alt="">
+        <i class="fas fa-arrow-up" style="font-size: 3rem; color: var(--yellow);"></i>
     </a>
 
     <!-- jquery cdn link -->
@@ -716,20 +847,54 @@
         });
 
         function sendEmail() {
-            Email.send({
-                Host: "smtp.elasticemail.com",
-                Username: "indeedtomorrow@gmail.com",
-                Password: "BA41E2BC3988A05543AD36F53E616AFB0D7A",
-                To: 'opibiswas54@gmail.com',
-                From: "indeedtomorrow@gmail.com",
-                Subject: "New Message from Portfolio Website",
-                Body: "Name: " + document.getElementById("nam").value
-                    + "<br> Email: " + document.getElementById("emaill").value
-                    + "<br> Message: " + document.getElementById("msg").value
-            }).then(
-                message => alert("Message sent successfully!")
-            );
+    // Get form values
+    const name = document.getElementById("nam").value.trim();
+    const email = document.getElementById("emaill").value.trim();
+    const message = document.getElementById("msg").value.trim();
+    
+    // Validate form fields (Your existing validation code is good)
+    if (!name || !email || !message) {
+        alert("Please fill in all fields!");
+        return false;
+    }
+    
+    // Show loading
+    const submitBtn = document.querySelector('.contact form button');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+    submitBtn.disabled = true;
+    
+    Email.send({
+        SecureToken: "REPLACE_WITH_NEW_TOKEN_HERE", // Go generate a new one!
+        To: 'opibiswas54@gmail.com',
+        From: 'opibiswas54@gmail.com', // MUST MATCH the account the token belongs to
+        Subject: "Portfolio Contact: " + name,
+        Body: `
+            <h3>New Contact Form Submission</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>From Email:</strong> ${email}</p> <hr>
+            <p><strong>Message:</strong></p>
+            <p>${message.replace(/\n/g, '<br>')}</p>
+        `
+    }).then(
+        function(message) {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            
+            // Check the specific response message from the server
+            if (message === "OK") {
+                alert("✅ Message sent successfully!");
+                document.querySelector('form').reset();
+            } else {
+                // This alerts the ACTUAL error from Elastic Email
+                console.error(message); 
+                alert("❌ Error: " + message);
+            }
         }
+    );
+    
+    return false;
+}
     </script>
 
 </body>
