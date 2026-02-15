@@ -488,7 +488,140 @@
                 padding:1rem 7rem;
                 padding-right: 11rem;
             }
-        }
+        }.education .box-container .box .edu-logo{
+    position: absolute;
+    top:-1.5rem; left:-2.5rem;
+    height:5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background:var(--yellow);
+    padding: .6rem;
+    object-fit: contain;
+}
+
+/* =======================
+   CERTIFICATIONS (FIXED)
+   ======================= */
+
+/* IMPORTANT: gap works only with flex/grid */
+.certifications .cert-list{
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 6rem 8rem;      /* match your other sections */
+  padding-left: 0;
+}
+
+/* Make each item a clean card */
+.certifications .cert-item{
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  padding: 18px 22px;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+/* Icon bubble */
+.certifications .cert-item i{
+  flex: 0 0 auto;
+  height: 54px;
+  width: 54px;
+  border-radius: 40%;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 20px;
+  color: #111;
+  background: var(--yellow);
+}
+
+/* Text area */
+.certifications .cert-text{
+  flex: 1;
+}
+
+.certifications .cert-text h4{
+  font-size: 2.0rem;   /* 20px (your site uses ~10px per rem) */
+  line-height: 1.35;
+  margin: 0 0 8px 0;
+  color: #fff;
+  font-weight: 700;
+}
+
+.certifications .cert-text p{
+  margin: 0;
+  font-size: 1.6rem;   /* 16px */
+  line-height: 1.7;
+  color: #ddd;
+}
+
+.certifications .cert-meta{
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 1.5rem;
+  color: #eee;
+}
+
+/* Button style (fixes purple link look) */
+.certifications .cert-btn{
+  flex: 0 0 auto;
+  align-self: center;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  background: var(--yellow);
+  color: #111;
+
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.25);
+}
+
+.certifications .cert-btn:hover{
+  background: #fff;
+  color: #111;
+}
+
+/* Your .heading has margin-bottom:-4rem which can overlap.
+   Fix only for Certifications so it looks clean. */
+.certifications .heading{
+  margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 780px){
+  .certifications .cert-list{
+    margin: 5rem -1rem;   /* consistent with your mobile rules */
+  }
+}
+
+@media (max-width: 426px){
+  .certifications .cert-list{
+    margin: 3rem -2rem;
+  }
+  .certifications .cert-item{
+    padding: 16px 16px;
+  }
+}
+
+
+/* Mobile tuning */
+@media (max-width: 768px){
+  .cert-item{ padding: 16px 16px; }
+  .cert-text h4{ font-size: 1.75rem; }
+  .cert-text p{ font-size: 1.45rem; }
+  .cert-btn{ padding: 9px 14px; }
+}
+
+
 
         @media (max-width:780px){
            header{
@@ -560,8 +693,10 @@
             <ul>
                 <li><a href="#home">About Me</a></li>
                 <li><a href="#education">Education</a></li>
+                
                 <li><a href="#active">Research & Skills</a></li>
                 <li><a href="#project">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#award">Achievements & Activities</a></li>
                 <li><a href="#coursework">Coursework</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -577,78 +712,83 @@
     <section class="home" id="home">
         <h3>Hello, Everyone!</h3>
         <h1>I'M <span>Opi Biswas</span></h1>
-        <p>I completed my Bachelor's degree with Honors in Computer Science and Engineering from University of Chittagong with an interest in Artificial Intelligence, Machine Learning and Computer Vision. I have developed practical skills in Python, C, C++ and Java through research and project work.</p>
-        
+        <p>
+I am a research-oriented Computer Science graduate specializing in 
+Computer Vision, Machine Learning and Deep Learning. My work focuses on 
+real-world AI solutions, particularly in intelligent transportation 
+and agricultural automation systems. I am actively seeking fully funded M.Sc. or PhD
+ research opportunities to advance applied AI research.
+</p>
+
         <h3><i class="fas fa-search-plus" style="color:#3b7db3;"></i> Research Interest:</h3>
         <p><i class="fas fa-brain" style="color:#d3b210;"></i> Machine Learning & Artificial Intelligence<br>
             <i class="fas fa-eye" style="color:#e7a375;"></i> Computer Vision<br>
             <i class="fas fa-image" style="color:#72aa6d;"></i> Deep Learning & Pattern Recognition<br>
             <i class="fas fa-search" style="color:#a2d1e2;"></i> Image Processing<br>
-            <i class="fas fa-language" style="color:#cd79c1;"></i> Natural Language Processing
+            <i class="fas fa-cubes" style="color:#a2d1e2;"></i> Vision Language Navigation<br>
+            <i class="fas fa-language" style="color:#cd79c1;"></i> Human-Robot Interaction
         </p>
         
         <a target="_blank" href="Cv_opi.pdf"><button class="btn"> My Academic CV <i class="fas fa-download"></i></button></a>
         <br><br>
         <h3>Quote </h3>
-        <p>|| “Dream is not that which you see while sleeping it is something that does not let you sleep.”</p>
+        <p>|| “Learn with purpose. Build with care. Share with impact.”</p>
     </section>
 
     <!-- education section starts  -->
-    <section class="education" id="education">
-        <h1 class="heading"><img src="img/education.png" alt="" style="height: 4rem;"> Education </h1>
+<section class="education" id="education">
+    <h1 class="heading"><img src="img/education.png" alt="" style="height: 4rem;"> Education </h1>
 
-        <div class="box-container">
-            <div class="educ">
-                 <div class="box">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>Aug 2025 - Dec 2026 (Expected)</span>
-                    <h3>University of Chittagong</h3>
-                    <p>M.Sc. in Computer Science and Engineering<br>
-                        <!-- CGPA: 3.62 / 4.00<br> -->
-                        Location: Chittagong, Bangladesh</p>
-                </div>
-
-                <div class="box">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>Jan 2020 - Aug 2025 </span>
-                    <h3>University of Chittagong</h3>
-                    <p>B.Sc. in Computer Science and Engineering<br>
-                        CGPA: 3.63 / 4.00<br>
-                        Location: Chittagong, Bangladesh</p>
-                </div>
-
+    <div class="box-container">
+        <div class="educ">
+             <div class="box">
+                <img class="edu-logo" src="img/cu logo.png" alt="University of Chittagong Logo">
+                <span>Aug 2025 - Dec 2026 (Expected)</span>
+                <h3>University of Chittagong</h3>
+                <p>M.Sc. in Computer Science and Engineering<br>
+                    <!-- CGPA: 3.62 / 4.00<br> -->
+                    Location: Chittagong, Bangladesh</p>
             </div>
 
-            <div class="educ">
-
-                <div class="box">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>Jun 2017 - May 2019</span>
-                    <h3>Saidpur Government Science College</h3>
-                    <p>Higher Secondary Certificate (HSC) in Science<br>
-                        GPA: A+ (5.00 / 5.00)<br>
-                        Location: Saidpur, Nilphamari</p>
-                </div>
-
-                <div class="box">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>Jan 2015 - Feb 2017</span>
-                    <h3>Lions School and College</h3>
-                    <p>Secondary School Certificate (SSC) in Science<br>
-                        GPA: Golden A+ (5.00 / 5.00)<br>
-                        Location: Saidpur, Nilphamari</p>
-                </div>
+            <div class="box">
+                <img class="edu-logo" src="img/culogo.png" alt="University of Chittagong Logo">
+                <span>Jan 2020 - Aug 2025 </span>
+                <h3>University of Chittagong</h3>
+                <p>B.Sc. in Computer Science and Engineering<br>
+                    CGPA: 3.63 / 4.00<br>
+                    Location: Chittagong, Bangladesh</p>
             </div>
 
-            <p class="edu1">Certifications</p>
-            <div class="cert">
-                <i class="fas fa-certificate"></i>
-                <p>[1] Full Stack Web Development Certification, EDGE Program <a href="#"><span>[ Certificate ]</span></a>
-                    <br>[2] Data Analysis with Excel Certification, Futurenation and UNDP Bangladesh <a href="#"><span>[ Certificate ]</span></a>
-                </p>
+        </div>
+
+        <div class="educ">
+
+            <div class="box">
+                <img class="edu-logo" src="img/sgtc_logo.png" alt="Saidpur Government Science College Logo">
+                <span>Jun 2017 - May 2019</span>
+                <h3>Saidpur Government Science College</h3>
+                <p>Higher Secondary Certificate (HSC) in Science<br>
+                    GPA: A+ (5.00 / 5.00)<br>
+                    Location: Saidpur, Nilphamari</p>
+            </div>
+
+            <div class="box">
+                <img class="edu-logo" src="img/lions_logo.png" alt="Lions School and College Logo">
+                <span>Jan 2015 - Feb 2017</span>
+                <h3>Lions School and College</h3>
+                <p>Secondary School Certificate (SSC) in Science<br>
+                    GPA: Golden A+ (5.00 / 5.00)<br>
+                    Location: Saidpur, Nilphamari</p>
             </div>
         </div>
-    </section>
+
+
+    </div>
+</section>
+<!-- education section ends  -->
+
+
+
 
     <!-- research & skills section starts -->
     <section class="res" id="active">
@@ -693,6 +833,74 @@
         </div>
     </section>
 
+    
+<!-- certifications section starts -->
+<section class="certifications" id="certifications">
+    <h1 class="heading">
+        <img src="img/education.png" alt="" style="height: 4rem;"> Certifications
+    </h1>
+
+    <div class="box-container cert-list">
+
+        
+
+        <div class="cert-item">
+            <i class="fas fa-certificate"></i>
+
+            <div class="cert-text">
+                <h4>Data Analysis with Excel — Futurenation & UNDP Bangladesh (Aug 2025)</h4>
+                <p>
+                    Training focused on spreadsheet-based data analysis workflows, including data cleaning, analysis, and reporting in Excel.
+                </p>
+            </div>
+
+            <a class="cert-btn" href="img/certificates/Data_analysis.png" target="_blank">Certificate</a>
+        </div>
+
+        <div class="cert-item">
+            <i class="fas fa-certificate"></i>
+
+            <div class="cert-text">
+                <h4>Voices of Excellence: From Campus Dreams to Global Destinations — Participation (2025)</h4>
+                <p>
+                    Participated in a 10-day seminar series on global research pathways, competitive scholarships, and graduate study preparation.
+                </p>
+            </div>
+
+            <a class="cert-btn" href="img/certificates/Voice_of_Excillence.png" target="_blank">Certificate</a>
+        </div>
+
+        <div class="cert-item">
+            <i class="fas fa-certificate"></i>
+
+            <div class="cert-text">
+                <h4>The SDG Primer — Futurenation & UNDP Bangladesh (Sep 2025)</h4>
+                <p>
+                    Completed a course on the 2030 Agenda and the Sustainable Development Goals (SDGs), strengthening understanding of sustainability frameworks and development priorities.
+                </p>
+            </div>
+
+            <a class="cert-btn" href="img/certificates/SDG.png" target="_blank">Certificate</a>
+        </div>
+
+        <div class="cert-item">
+            <i class="fas fa-certificate"></i>
+
+            <div class="cert-text">
+                <h4>Full Stack Web Development — EDGE Program (Bangladesh Computer Council, ICT Division)</h4>
+                <p>
+                    Completed an 80-hour structured training covering full-stack development fundamentals and practical implementation.
+                    <br><span class="cert-meta"><b>Credential ID:</b> EDGE-DSTS-105-8369-00009</span>
+                </p>
+            </div>
+
+            <a class="cert-btn" href="img/certificates/full_stack.png" target="_blank">Certificate</a>
+        </div>
+
+    </div>
+</section>
+<!-- certifications section ends -->
+
     <!-- achievements section starts -->
     <section class="portfolio" id="award">
         <h1 class="heading"><img src="img/medal.png" alt="" style="height: 4rem;"> Achievements <span>& Extra Curricular Activities</span> </h1>
@@ -726,7 +934,8 @@
             </div>
         </div>
         
-    <h1 class="heading"><img src="img/education.png" alt="" style="height: 4rem;"> Relevant <span>Coursework</span></h1>
+    <h1 class="heading" id="coursework"><img src="img/education.png" alt="" style="height: 4rem;"> Relevant <span>Coursework</span></h1>
+
 <div class="box-container">
     <div class="course-grid">
         <div class="course-column">
