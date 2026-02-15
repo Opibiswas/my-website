@@ -2,1111 +2,358 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opi Biswas - Portfolio</title>
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
-        integrity="dika512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
-
-        :root{
-            --yellow:#f9ca24;
-        }
-
-        *{
-            font-family: 'Nunito', sans-serif;
-            margin:0; padding:0;
-            box-sizing: border-box;
-            text-decoration: none;
-            outline: none; border:none;
-            transition: all .2s linear;
-        }
-
-        *::selection{
-            background:var(--yellow);
-            color:#333;
-        }
-
-        html{
-            font-size: 65.75%;
-            overflow-x: hidden;
-        }
-
-        html::-webkit-scrollbar{
-            width:1.4rem;
-        }
-
-        html::-webkit-scrollbar-track{
-            background:#222;
-        }
-
-        html::-webkit-scrollbar-thumb{
-            background:var(--yellow);
-        }
-
-        body{
-            background:#111;
-            overflow-x: hidden;
-            padding-left: 35rem;
-        }
-
-        section{
-            min-height: 100vh;
-            padding:1rem;
-        }
-
-        .btn{
-            padding:.7rem 3rem;
-            background:#333;
-            color:#fff;
-            cursor: pointer;
-            margin-top: 1rem;
-            font-size: 1.5rem;
-            border-radius: 5rem;
-        }
-
-        .btn i{
-            padding:0 .5rem;
-            font-size: 1.8rem;
-        }
-
-        .btn:hover{
-            background:var(--yellow);
-        }
-
-        .heading{
-            text-align: center;
-            margin:0 6rem;
-            font-size: 4rem;
-            padding:1rem;
-            border-bottom: .1rem solid #fff4;
-            color:#fff;
-            margin-bottom: -4rem;
-        }
-
-        .heading span{
-            color:var(--yellow);
-        }
-
-        header{
-            position: fixed;
-            top:0; left:0;
-            z-index: 1000;
-            height:100%;
-            width:35rem;
-            background:#1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-flow: column;
-            text-align: center;
-            padding-top: 3rem;
-        }
-
-        header .user img{
-            height:15rem;
-            width:15rem;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            border:.4rem solid var(--yellow);
-        }
-
-        header .user .name{
-            font-size: 3rem;
-            color:#fff;
-        }
-
-        header .user .post{
-            font-size: 1.6rem;
-            color:#eee;
-        }
-
-        header .navbar{
-            width:100%;
-        }
-
-        header .navbar ul{
-            list-style: none;
-            padding:1rem 1rem;
-        }
-
-        header .navbar ul li a{
-            display: block;
-            padding:1rem;
-            margin:1.5rem 0;
-            background:#333;
-            color:#fff;
-            font-size: 1.5rem;
-            border-radius: 3rem;
-        }
-
-        header .navbar ul li a:hover{
-            background:var(--yellow);
-        }
-
-        #menu{
-            position: fixed;
-            top:2rem; right:2rem;
-            background:#333;
-            color:#fff;
-            cursor: pointer;
-            font-size: 2.5rem;
-            padding:1rem 1.5rem;
-            z-index: 1000;
-            display: none;
-        }
-
-        .home{
-            display: flex;
-            justify-content: center;
-            flex-flow: column;
-            padding:0 15rem;
-        }
-
-        .home h3{
-            font-size: 2.5rem;
-            color:#fff;
-        }
-
-        .home h1{
-            font-size:5rem;
-            color:#fff;
-        }
-
-        .home h1 span{
-            color:var(--yellow);
-        }
-
-        .home p{
-            font-size:1.5rem;
-            color:#eee;
-            padding: 1.2rem 0;
-            text-align: justify;
-        }
-
-        .education .box-container .edu1{
-            color: #eee;
-            margin:-2rem 7rem;
-            font-size: 3rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            display: flex;
-            border-bottom: .1rem solid #fff4;
-        }
-
-        .education .box-container .educ{
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding:1rem 0;
-            margin-top: 2rem;
-            padding-left: 3rem;
-        }
-
-        .education .box-container .cert{
-            color: #eee;
-            margin:5rem 7rem;
-            font-size: 1.5rem;
-            padding-left: 3.5rem;
-            justify-content: center;
-            width:88rem;
-            flex-wrap: wrap;
-            border-left: .2rem solid #fff;
-            margin-left: 11rem;
-            position: relative;
-        }
-
-        .education .box-container .cert i{
-            position: absolute;
-            top:-1.5rem; left:-2.5rem;
-            height:5rem;
-            width: 5rem;
-            border-radius: 50%;
-            line-height: 5rem;
-            text-align: center;
-            font-size: 2rem;
-            color:#fff;
-            background:var(--yellow);
-        }
-
-        .education .box-container .box{
-            width:38rem;
-            margin:4rem 1rem;
-            padding-left: 4rem;
-            border-left: .2rem solid #fff;
-            position: relative;
-        }
-
-        .education .box-container .box span{
-            font-size: 1.3rem;
-            background:#222;
-            color:#fff;
-            border-radius: 5rem;
-            padding:.5rem 1.8rem;
-        }
-
-        .education .box-container p span,.projects .box-container a span,
-        .education .box-container .box a span, .res .box-container a span{
-            font-size: 1.3rem;
-            background:#222;
-            color:#f9ca24;
-            border-radius: 5rem;
-            padding:0 1.8rem;
-        }
-
-        .education .box-container .box h3{
-            font-size: 1.7rem;
-            color:#fff;
-            padding-top: 1.5rem;
-        }
-
-        .education .box-container .box p, .Experience .box-container p,
-        .res .box-container p, .projects .box-container p,
-        .portfolio .box-container p{
-            font-size: 1.5rem;
-            color:#eee;
-            padding: .5rem 0;
-            width: 95%;
-            text-align: justify;
-        }
-
-        .education .box-container .box i{
-            position: absolute;
-            top:-1.5rem; left:-2.5rem;
-            height:5rem;
-            width: 5rem;
-            border-radius: 50%;
-            line-height: 5rem;
-            text-align: center;
-            font-size: 2rem;
-            color:#fff;
-            background:var(--yellow);
-        }
-
-        .Experience .box-container, .res .box-container,
-        .projects .box-container, .portfolio .box-container{
-            margin:5rem 8rem;
-            padding-left: 4rem;
-            position: relative;
-            color: #eee;
-        }
-
-        .Experience .box-container h3, .res .box-container h3,
-        .projects .box-container h3{
-            font-size: 2.5rem;
-            color:#f9ca24;
-            padding: 1.5rem .6rem;
-        }
-
-        .Experience .box-container span, .res .box-container span,
-        .projects .box-container span{
-            font-size: 1.3rem;
-            background:#222;
-            color:#fff;
-            border-radius: 5rem;
-            padding:.5rem 2.5rem;
-        }
-
-        .res .box-container .skill p{
-            margin-bottom: 2.2rem;
-            font-size: 1.6rem;
-        }
-
-        .res .box-container .skill p span{
-            border: 10px;
-            font-size: 1.6rem;
-        }
-
-        .portfolio .box-container{
-            margin-top: 8rem;
-        }
-
-        .portfolio .box-container li{
-            font-size: 1.5rem;
-            padding-bottom: 1.5rem;
-        }
-
-        .portfolio{
-            min-height: 38vh;
-            padding:1rem;
-        }
-        /* Add these CSS rules to your existing <style> section */
-
-/* Coursework specific styles */
-.portfolio .course-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.portfolio .course-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.portfolio .course-category {
-    background: #222;
-    padding: 2rem;
-    border-radius: .5rem;
-    border: .1rem solid #333;
-    transition: all .3s ease;
-}
-
-.portfolio .course-category:hover {
-    border-color: var(--yellow);
-    transform: translateY(-5px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.3);
-}
-
-.portfolio .course-category h3 {
-    color: var(--yellow);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    border-bottom: .2rem solid var(--yellow);
-    padding-bottom: .5rem;
-}
-
-.portfolio .course-category p {
-    color: #eee;
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-}
-
-/* Mobile responsiveness for coursework */
-@media (max-width: 780px) {
-    .portfolio .course-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .portfolio .course-column {
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 426px) {
-    .portfolio .course-category {
-        padding: 1.5rem;
-    }
-    
-    .portfolio .course-category h3 {
-        font-size: 1.8rem;
-    }
-}
-
-        .contact .row{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .contact .row .content{
-            flex:1 1 30rem;
-            margin-top: -8rem;
-            padding-left:4rem;
-            padding-bottom: 0;
-        }
-
-        .contact .row form{
-            flex:1 1 45rem;
-            padding:2rem;
-            margin:2rem;
-            margin-right: 12rem;
-            margin-top: 5rem;
-        }
-
-        .contact .row form .box{
-            padding:1.5rem;
-            margin:1rem 0;
-            background:rgba(131, 130, 130, 0.2);
-            color:#fff;
-            text-transform: none;
-            font-size: 1.6rem;
-            width:100%;
-        }
-
-        .contact .row form .box::placeholder{
-            text-transform: capitalize;
-        }
-
-        .contact .row form .message{
-            height: 15rem;
-            resize: none;
-        }
-
-        .contact .row .content .title{
-            text-transform: uppercase;
-            color:#fff;
-            margin-left: 3rem;
-            font-size: 2.5rem;
-            padding-bottom: 1.5rem;
-        }
-
-        .contact .row .content .info h3{
-            display: flex;
-            align-items: center;
-            font-size: 1.6rem;
-            color:#eee;
-            padding:1rem ;
-            margin-left: 3rem;
-            font-weight: normal;
-        }
-
-        .contact .row .content .info h3 i{
-            padding-right: 1rem;
-            color:var(--yellow);
-        }
-
-        .top{
-            position: fixed;
-            bottom:7.5rem; right: 2rem;
-            z-index: 100;
-            display: none;
-        }
-
-        /* Media Queries */
-        @media (max-width:1302px){
-            html{
-                font-size: 55%;
-            }
-            header{
-                padding-left:1rem;
-            }
-            .home{
-                padding:1rem 7rem;
-                padding-right: 11rem;
-            }
-        }.education .box-container .box .edu-logo{
-    position: absolute;
-    top:-1.5rem; left:-2.5rem;
-    height:5rem;
-    width: 5rem;
-    border-radius: 50%;
-    background:var(--yellow);
-    padding: .6rem;
-    object-fit: contain;
-}
-
-/* =======================
-   CERTIFICATIONS (FIXED)
-   ======================= */
-
-/* IMPORTANT: gap works only with flex/grid */
-.certifications .cert-list{
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  margin: 6rem 8rem;      /* match your other sections */
-  padding-left: 0;
-}
-
-/* Make each item a clean card */
-.certifications .cert-item{
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-
-  padding: 18px 22px;
-  border-radius: 12px;
-
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.10);
-}
-
-/* Icon bubble */
-.certifications .cert-item i{
-  flex: 0 0 auto;
-  height: 54px;
-  width: 54px;
-  border-radius: 40%;
-
-  display: grid;
-  place-items: center;
-
-  font-size: 20px;
-  color: #111;
-  background: var(--yellow);
-}
-
-/* Text area */
-.certifications .cert-text{
-  flex: 1;
-}
-
-.certifications .cert-text h4{
-  font-size: 2.0rem;   /* 20px (your site uses ~10px per rem) */
-  line-height: 1.35;
-  margin: 0 0 8px 0;
-  color: #fff;
-  font-weight: 700;
-}
-
-.certifications .cert-text p{
-  margin: 0;
-  font-size: 1.6rem;   /* 16px */
-  line-height: 1.7;
-  color: #ddd;
-}
-
-.certifications .cert-meta{
-  display: inline-block;
-  margin-top: 6px;
-  font-size: 1.5rem;
-  color: #eee;
-}
-
-/* Button style (fixes purple link look) */
-.certifications .cert-btn{
-  flex: 0 0 auto;
-  align-self: center;
-
-  padding: 10px 18px;
-  border-radius: 999px;
-
-  font-size: 1.4rem;
-  font-weight: 700;
-
-  background: var(--yellow);
-  color: #111;
-
-  text-decoration: none;
-  border: 1px solid rgba(0,0,0,0.25);
-}
-
-.certifications .cert-btn:hover{
-  background: #fff;
-  color: #111;
-}
-
-/* Your .heading has margin-bottom:-4rem which can overlap.
-   Fix only for Certifications so it looks clean. */
-.certifications .heading{
-  margin-bottom: 2rem;
-}
-
-/* Responsive */
-@media (max-width: 780px){
-  .certifications .cert-list{
-    margin: 5rem -1rem;   /* consistent with your mobile rules */
-  }
-}
-
-@media (max-width: 426px){
-  .certifications .cert-list{
-    margin: 3rem -2rem;
-  }
-  .certifications .cert-item{
-    padding: 16px 16px;
-  }
-}
-
-
-/* Mobile tuning */
-@media (max-width: 768px){
-  .cert-item{ padding: 16px 16px; }
-  .cert-text h4{ font-size: 1.75rem; }
-  .cert-text p{ font-size: 1.45rem; }
-  .cert-btn{ padding: 9px 14px; }
-}
-
-
-
-        @media (max-width:780px){
-           header{
-               left:-80%;
-           } 
-           #menu{
-               display: block;
-           } 
-           header.toggle{
-            left:0%;
-           }
-           body{
-               padding:5rem;
-           }
-        .education .box-container, .Experience .box-container, .res .box-container,
-         .projects .box-container, .portfolio .box-container{
-            margin:5rem -1rem;
-        }
-        .home{
-            margin-top:-6rem;
-        }
-        } 
-
-        @media (max-width:426px){
-            header{
-                left:-80%;
-            } 
-            .home{
-                padding-right: 2rem;
-                margin-left: -5rem;
-            }
-            .contact .row .content{
-                margin-top: 1.5rem;
-                }
-            .contact .row form{
-                margin-top: -1rem;
-                }
-            .heading{
-                    margin:0 3rem;
-                }
-            html{
-                    font-size: 40%;
-                }
-            .education .box-container, .Experience .box-container, .res .box-container,
-                .projects .box-container, .portfolio .box-container{
-                   margin:1rem -3rem;
-                }
-                .education .box-container .cert{
-                    margin:5rem;
-                    padding-left: 3.5rem;
-                    margin-left: 4rem;
-                }
-         } 
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opi Biswas - Portfolio</title>
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+  <!-- magnific popup (you had it linked; keep if you use it) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+    integrity="dika512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- your main css -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-    <!-- header section starts  -->
-    <header>
-        <div class="user">
-            <img src="opi.jpg" alt="">
-            <h3 class="name">Opi Biswas</h3>
-            <p class="post">Computer Science Student<br>
-                University of Chittagong</p>
-        </div>
+  <!-- header section starts -->
+  <header>
+    <div class="user">
+      <img src="opi.jpg" alt="">
+      <h3 class="name">Opi Biswas</h3>
+      <p class="post">Computer Science Student<br>University of Chittagong</p>
+    </div>
 
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">About Me</a></li>
-                <li><a href="#education">Education</a></li>
-                
-                <li><a href="#active">Research & Skills</a></li>
-                <li><a href="#project">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#award">Achievements & Activities</a></li>
-                <li><a href="#coursework">Coursework</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">About Me</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#active">Research & Skills</a></li>
+        <li><a href="#project">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#award">Achievements & Activities</a></li>
+        <li><a href="#coursework">Coursework</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- header section ends -->
 
-    <!-- header section ends -->
+  <div id="menu" class="fas fa-bars"></div>
 
-    <div id="menu" class="fas fa-bars"></div>
+  <!-- home section starts -->
+  <section class="home" id="home">
+    <h3>Hello, Everyone!</h3>
+    <h1>I'M <span>Opi Biswas</span></h1>
 
-    <!-- home section starts  -->
-    <section class="home" id="home">
-        <h3>Hello, Everyone!</h3>
-        <h1>I'M <span>Opi Biswas</span></h1>
-        <p>
-I am a research-oriented Computer Science graduate specializing in 
-Computer Vision, Machine Learning and Deep Learning. My work focuses on 
-real-world AI solutions, particularly in intelligent transportation 
-and agricultural automation systems. I am actively seeking fully funded M.Sc. or PhD
- research opportunities to advance applied AI research.
-</p>
+    <p>
+      I am a research-oriented Computer Science graduate specializing in
+      Computer Vision, Machine Learning and Deep Learning. My work focuses on
+      real-world AI solutions, particularly in intelligent transportation
+      and agricultural automation systems. I am actively seeking fully funded M.Sc. or PhD
+      research opportunities to advance applied AI research.
+    </p>
 
-        <h3><i class="fas fa-search-plus" style="color:#3b7db3;"></i> Research Interest:</h3>
-        <p><i class="fas fa-brain" style="color:#d3b210;"></i> Machine Learning & Artificial Intelligence<br>
-            <i class="fas fa-eye" style="color:#e7a375;"></i> Computer Vision<br>
-            <i class="fas fa-image" style="color:#72aa6d;"></i> Deep Learning & Pattern Recognition<br>
-            <i class="fas fa-search" style="color:#a2d1e2;"></i> Image Processing<br>
-            <i class="fas fa-cubes" style="color:#a2d1e2;"></i> Vision Language Navigation<br>
-            <i class="fas fa-language" style="color:#cd79c1;"></i> Human-Robot Interaction
-        </p>
-        
-        <a target="_blank" href="Cv_opi.pdf"><button class="btn"> My Academic CV <i class="fas fa-download"></i></button></a>
-        <br><br>
-        <h3>Quote </h3>
-        <p>|| “Learn with purpose. Build with care. Share with impact.”</p>
-    </section>
+    <h3><i class="fas fa-search-plus" style="color:#3b7db3;"></i> Research Interest:</h3>
+    <p>
+      <i class="fas fa-brain" style="color:#d3b210;"></i> Machine Learning & Artificial Intelligence<br>
+      <i class="fas fa-eye" style="color:#e7a375;"></i> Computer Vision<br>
+      <i class="fas fa-image" style="color:#72aa6d;"></i> Deep Learning & Pattern Recognition<br>
+      <i class="fas fa-search" style="color:#a2d1e2;"></i> Image Processing<br>
+      <i class="fas fa-cubes" style="color:#a2d1e2;"></i> Vision Language Navigation<br>
+      <i class="fas fa-language" style="color:#cd79c1;"></i> Human-Robot Interaction
+    </p>
 
-    <!-- education section starts  -->
-<section class="education" id="education">
-    <h1 class="heading"><img src="img/education.png" alt="" style="height: 4rem;"> Education </h1>
+    <a target="_blank" href="Cv_opi.pdf">
+      <button class="btn"> My Academic CV <i class="fas fa-download"></i></button>
+    </a>
+
+    <br><br>
+    <h3>Quote</h3>
+    <p>“Learn with purpose. Build with care. Share with impact.”</p>
+  </section>
+  <!-- home section ends -->
+
+  <!-- education section starts -->
+  <section class="education" id="education">
+    <h1 class="heading"><img src="img/education.png" alt="" class="section-icon"> Education </h1>
 
     <div class="box-container">
-        <div class="educ">
-             <div class="box">
-                <img class="edu-logo" src="img/cu logo.png" alt="University of Chittagong Logo">
-                <span>Aug 2025 - Dec 2026 (Expected)</span>
-                <h3>University of Chittagong</h3>
-                <p>M.Sc. in Computer Science and Engineering<br>
-                    <!-- CGPA: 3.62 / 4.00<br> -->
-                    Location: Chittagong, Bangladesh</p>
-            </div>
-
-            <div class="box">
-                <img class="edu-logo" src="img/culogo.png" alt="University of Chittagong Logo">
-                <span>Jan 2020 - Aug 2025 </span>
-                <h3>University of Chittagong</h3>
-                <p>B.Sc. in Computer Science and Engineering<br>
-                    CGPA: 3.63 / 4.00<br>
-                    Location: Chittagong, Bangladesh</p>
-            </div>
-
+      <div class="educ">
+        <div class="box">
+          <img class="edu-logo" src="img/cu logo.png" alt="University of Chittagong Logo">
+          <span>Aug 2025 - Dec 2026 (Expected)</span>
+          <h3>University of Chittagong</h3>
+          <p>M.Sc. in Computer Science and Engineering<br>
+            Location: Chittagong, Bangladesh</p>
         </div>
 
-        <div class="educ">
+        <div class="box">
+          <img class="edu-logo" src="img/cu logo.png" alt="University of Chittagong Logo">
+          <span>Jan 2020 - Aug 2025</span>
+          <h3>University of Chittagong</h3>
+          <p>B.Sc. in Computer Science and Engineering<br>
+            CGPA: 3.63 / 4.00<br>
+            Location: Chittagong, Bangladesh</p>
+        </div>
+      </div>
 
-            <div class="box">
-                <img class="edu-logo" src="img/sgtc_logo.png" alt="Saidpur Government Science College Logo">
-                <span>Jun 2017 - May 2019</span>
-                <h3>Saidpur Government Science College</h3>
-                <p>Higher Secondary Certificate (HSC) in Science<br>
-                    GPA: A+ (5.00 / 5.00)<br>
-                    Location: Saidpur, Nilphamari</p>
-            </div>
-
-            <div class="box">
-                <img class="edu-logo" src="img/lions_logo.png" alt="Lions School and College Logo">
-                <span>Jan 2015 - Feb 2017</span>
-                <h3>Lions School and College</h3>
-                <p>Secondary School Certificate (SSC) in Science<br>
-                    GPA: Golden A+ (5.00 / 5.00)<br>
-                    Location: Saidpur, Nilphamari</p>
-            </div>
+      <div class="educ">
+        <div class="box">
+          <img class="edu-logo" src="img/sgtc_logo.png" alt="Saidpur Government Science College Logo">
+          <span>Jun 2017 - May 2019</span>
+          <h3>Saidpur Government Science College</h3>
+          <p>Higher Secondary Certificate (HSC) in Science<br>
+            GPA: A+ (5.00 / 5.00)<br>
+            Location: Saidpur, Nilphamari</p>
         </div>
 
-
+        <div class="box">
+          <img class="edu-logo" src="img/lions_logo.png" alt="Lions School and College Logo">
+          <span>Jan 2015 - Feb 2017</span>
+          <h3>Lions School and College</h3>
+          <p>Secondary School Certificate (SSC) in Science<br>
+            GPA: Golden A+ (5.00 / 5.00)<br>
+            Location: Saidpur, Nilphamari</p>
+        </div>
+      </div>
     </div>
-</section>
-<!-- education section ends  -->
+  </section>
+  <!-- education section ends -->
 
+  <!-- research & skills section starts -->
+  <section class="res" id="active">
+    <h1 class="heading"><img src="img/research.png" alt="" class="section-icon"> Research <span>& Skills</span></h1>
+    <div class="box-container">
+      <h3>Publication (Accepted to ICCIT-2025 conference)</h3>
+      <p><b>"A Hybrid YOLOv5 and Graph-Based Segmentation Framework for Bangladeshi License Plate Recognition"</b>.
+        This research focuses on developing novel computer vision techniques combining state-of-the-art object detection with graph-based segmentation methods, addressing challenges specific to Bangladeshi license plate formats and conditions.
+      </p>
 
+      <h3>Problem Solving & Programming</h3>
+      <p>
+        Strong foundation in competitive programming with 600+ problems solved across various online judges.
+        Developed algorithmic thinking and data structure expertise through consistent practice and participation in programming contests.
+      </p>
 
+      <div class="skill">
+        <h3><img src="img/pencil.png" alt="" style="height: 2.5rem;"> Technical Skills</h3>
+        <p><span>Programming Languages :</span> C, C++, Python, Java,</p>
+        <p><span>Web Development :</span> HTML, CSS, PHP, JavaScript</p>
+        <p><span>Machine Learning Libraries :</span> NumPy, Pandas, Scikit-Learn, spaCy, Keras, TensorFlow, PyTorch</p>
+        <p><span>Tools & Technologies :</span> Git, Google Colab, Code Blocks, Android Studio, Visual Studio Code, LaTeX.</p>
+      </div>
+    </div>
+  </section>
+  <!-- research & skills section ends -->
 
-    <!-- research & skills section starts -->
-    <section class="res" id="active">
-        <h1 class="heading"><img src="img/research.png" alt="" style="height: 4rem;"> Research <span>& Skills</span></h1>
-        <div class="box-container">
-            <h3>Publication (Accepted to ICCIT-2025 conference)</h3>
-            <p><b>"A Hybrid YOLOv5 and Graph-Based Segmentation Framework for Bangladeshi License Plate Recognition"</b>. This research focuses on developing novel computer vision techniques combining state-of-the-art object detection with graph-based segmentation methods, addressing challenges specific to Bangladeshi license plate formats and conditions.</p>
+  <!-- projects section starts -->
+  <section class="projects" id="project">
+    <h1 class="heading"><img src="img/puzzle.png" alt="" class="section-icon"> Projects </h1>
+    <div class="box-container">
+      <h3>Research Lab Management System</h3>
+      <span>Group Project, 2023</span>
+      <p>
+        Developed a comprehensive web-based platform to streamline research lab operations, including member profiles, publication tracking, event scheduling, and resource sharing. Integrated role-based access control for administrators and implemented advanced search functionality for efficient data retrieval. Followed modular architecture for scalability and long-term maintenance.
+      </p>
+      <p>Code is available on: <a href="https://github.com/Opibiswas/Research_lab_management_system"><span>[GitHub]</span></a></p>
+      <p>Tech Stack: HTML, CSS, JavaScript, MySQL</p>
+      <br>
 
-            <h3>Problem Solving & Programming</h3>
-            <p>Strong foundation in competitive programming with 600+ problems solved across various online judges. Developed algorithmic thinking and data structure expertise through consistent practice and participation in programming contests.</p>
+      <h3>Rice Leaf Disease Detection App</h3>
+      <span>Individual Project, 2024</span>
+      <p>
+        Developed an Android mobile application to identify and classify rice leaf diseases using machine learning. Trained a Convolutional Neural Network (CNN) model to detect diseases like Bacterial Blight and Leaf Smut from leaf images. Integrated TensorFlow Lite for real-time on-device inference without requiring internet access.
+      </p>
+      <p>Code is available on: <a href="https://github.com/Opibiswas/MyMobileApp"><span>[GitHub]</span></a></p>
+      <p>Tech Stack: Android SDK, Java, TensorFlow Lite</p>
+      <br>
+    </div>
+  </section>
+  <!-- projects section ends -->
 
-            <div class="skill">
-                <h3><img src="img/pencil.png" alt="" style="height: 2.5rem;"> Technical Skills</h3>
-                <p><span>Programming Languages :</span> C, C++, Python, Java, </p>
-                <p><span>Web Development :</span> HTML, CSS, PHP, JavaScript</p>
-                <p><span>Machine Learning Libraries :</span> NumPy, Pandas, Scikit-Learn, spaCy, Keras, TensorFlow, PyTorch</p>
-                <p><span>Tools & Technologies :</span> Git, Google Colab, Code Blocks, Android Studio, Visual Studio Code, LaTeX. </p>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- projects section starts -->
-    <section class="projects" id="project">
-        <h1 class="heading"><img src="img/puzzle.png" alt="" style="height: 4rem;"> Projects </h1>
-        <div class="box-container">
-            <h3>Research Lab Management System</h3>
-            <span>Group Project, 2023</span>
-            <p>Developed a comprehensive web-based platform to streamline research lab operations, including member profiles, publication tracking, event scheduling, and resource sharing. Integrated role-based access control for administrators and implemented advanced search functionality for efficient data retrieval. Followed modular architecture for scalability and long-term maintenance.</p>
-            <p>Code is available on: <a href="https://github.com/Opibiswas/Research_lab_management_system"><span>[GitHub]</span></a></p>
-            <p>Tech Stack: HTML, CSS, JavaScript, MySQL</p>
-            <br>
-
-            <h3>Rice Leaf Disease Detection App</h3>
-            <span>Individual Project, 2024</span>
-            <p>Developed an Android mobile application to identify and classify rice leaf diseases using machine learning. Trained a Convolutional Neural Network (CNN) model to detect diseases like Bacterial Blight and Leaf Smut from leaf images. Integrated TensorFlow Lite for real-time on-device inference without requiring internet access.</p>
-            <p>Code is available on: <a href="https://github.com/Opibiswas/MyMobileApp"><span>[GitHub]</span></a></p>
-            <p>Tech Stack: Android SDK, Java, TensorFlow Lite</p>
-            <br>
-
-        
-        </div>
-    </section>
-
-    
-<!-- certifications section starts -->
-<section class="certifications" id="certifications">
+  <!-- certifications section starts -->
+  <section class="certifications" id="certifications">
     <h1 class="heading">
-        <img src="img/education.png" alt="" style="height: 4rem;"> Certifications
+      <img src="img/education.png" alt="" class="section-icon"> Certifications
     </h1>
 
     <div class="box-container cert-list">
 
-        
-
-        <div class="cert-item">
-            <i class="fas fa-certificate"></i>
-
-            <div class="cert-text">
-                <h4>Data Analysis with Excel — Futurenation & UNDP Bangladesh (Aug 2025)</h4>
-                <p>
-                    Training focused on spreadsheet-based data analysis workflows, including data cleaning, analysis, and reporting in Excel.
-                </p>
-            </div>
-
-            <a class="cert-btn" href="img/certificates/Data_analysis.png" target="_blank">Certificate</a>
+      <div class="cert-item">
+        <i class="fas fa-certificate"></i>
+        <div class="cert-text">
+          <h4>Data Analysis with Excel — Futurenation & UNDP Bangladesh (Aug 2025)</h4>
+          <p>Training focused on spreadsheet-based data analysis workflows, including data cleaning, analysis, and reporting in Excel.</p>
         </div>
+        <a class="cert-btn" href="img/certificates/Data_analysis.png" target="_blank">Certificate</a>
+      </div>
 
-        <div class="cert-item">
-            <i class="fas fa-certificate"></i>
-
-            <div class="cert-text">
-                <h4>Voices of Excellence: From Campus Dreams to Global Destinations — Participation (2025)</h4>
-                <p>
-                    Participated in a 10-day seminar series on global research pathways, competitive scholarships, and graduate study preparation.
-                </p>
-            </div>
-
-            <a class="cert-btn" href="img/certificates/Voice_of_Excillence.png" target="_blank">Certificate</a>
+      <div class="cert-item">
+        <i class="fas fa-certificate"></i>
+        <div class="cert-text">
+          <h4>Voices of Excellence: From Campus Dreams to Global Destinations — Participation (2025)</h4>
+          <p>Participated in a 10-day seminar series on global research pathways, competitive scholarships, and graduate study preparation.</p>
         </div>
+        <a class="cert-btn" href="img/certificates/Voice_of_Excillence.png" target="_blank">Certificate</a>
+      </div>
 
-        <div class="cert-item">
-            <i class="fas fa-certificate"></i>
-
-            <div class="cert-text">
-                <h4>The SDG Primer — Futurenation & UNDP Bangladesh (Sep 2025)</h4>
-                <p>
-                    Completed a course on the 2030 Agenda and the Sustainable Development Goals (SDGs), strengthening understanding of sustainability frameworks and development priorities.
-                </p>
-            </div>
-
-            <a class="cert-btn" href="img/certificates/SDG.png" target="_blank">Certificate</a>
+      <div class="cert-item">
+        <i class="fas fa-certificate"></i>
+        <div class="cert-text">
+          <h4>The SDG Primer — Futurenation & UNDP Bangladesh (Sep 2025)</h4>
+          <p>Completed a course on the 2030 Agenda and the Sustainable Development Goals (SDGs), strengthening understanding of sustainability frameworks and development priorities.</p>
         </div>
+        <a class="cert-btn" href="img/certificates/SDG.png" target="_blank">Certificate</a>
+      </div>
 
-        <div class="cert-item">
-            <i class="fas fa-certificate"></i>
-
-            <div class="cert-text">
-                <h4>Full Stack Web Development — EDGE Program (Bangladesh Computer Council, ICT Division)</h4>
-                <p>
-                    Completed an 80-hour structured training covering full-stack development fundamentals and practical implementation.
-                    <br><span class="cert-meta"><b>Credential ID:</b> EDGE-DSTS-105-8369-00009</span>
-                </p>
-            </div>
-
-            <a class="cert-btn" href="img/certificates/full_stack.png" target="_blank">Certificate</a>
+      <div class="cert-item">
+        <i class="fas fa-certificate"></i>
+        <div class="cert-text">
+          <h4>Full Stack Web Development — EDGE Program (Bangladesh Computer Council, ICT Division)</h4>
+          <p>
+            Completed an 80-hour structured training covering full-stack development fundamentals and practical implementation.
+            <br><span class="cert-meta"><b>Credential ID:</b> EDGE-DSTS-105-8369-00009</span>
+          </p>
         </div>
+        <a class="cert-btn" href="img/certificates/full_stack.png" target="_blank">Certificate</a>
+      </div>
 
     </div>
-</section>
-<!-- certifications section ends -->
+  </section>
+  <!-- certifications section ends -->
 
-    <!-- achievements section starts -->
-    <section class="portfolio" id="award">
-        <h1 class="heading"><img src="img/medal.png" alt="" style="height: 4rem;"> Achievements <span>& Extra Curricular Activities</span> </h1>
-        <div class="box-container">
-            <div style="margin-bottom: 3rem;">
-                <h3 style="color: var(--yellow); font-size: 2.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--yellow); padding-bottom: 0.5rem; display: inline-block;">Academic Achievements</h3>
-                <ul>
-                    <li>2nd Runner-Up, Intra Department Database Project Showcasing, University of Chittagong (Aug 2023)</li>
-                    <!-- <li>Maintained consistent academic performance with CGPA 3.62/4.00</li>
-                    <li>Achieved Golden A+ in both HSC and SSC examinations</li> -->
-                </ul>
-            </div>
+  <!-- achievements + coursework section starts -->
+  <section class="portfolio" id="award">
+    <h1 class="heading"><img src="img/medal.png" alt="" class="section-icon"> Achievements <span>& Extra Curricular Activities</span> </h1>
 
-            <div style="margin-bottom: 3rem;">
-                <h3 style="color: var(--yellow); font-size: 2.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--yellow); padding-bottom: 0.5rem; display: inline-block;">Leadership & Campus Involvement</h3>
-                <ul>
-                    <li>Vice President - Shaheed Abdur Rab Hall Career Club, University of Chittagong</li>
-                    <li>General Secretary - Nilphamari Student Association, University of Chittagong</li>
-                    <li>Vice President - Shaheed Abdur Rab Hall Sports Club, University of Chittagong</li>
-                    <li>Member - Computer Vision & Image Processing (CVIP) Research Group</li>
-                    
-                </ul>
-            </div>
+    <div class="box-container">
+      <div style="margin-bottom: 3rem;">
+        <h3 style="color: var(--yellow); font-size: 2.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--yellow); padding-bottom: 0.5rem; display: inline-block;">Academic Achievements</h3>
+        <ul>
+          <li>2nd Runner-Up, Intra Department Database Project Showcasing, University of Chittagong (Aug 2023)</li>
+        </ul>
+      </div>
 
-            <div style="margin-bottom: 3rem;">
-                <h3 style="color: var(--yellow); font-size: 2.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--yellow); padding-bottom: 0.5rem; display: inline-block;">Volunteer Activities</h3>
-                <ul>
-                    <li>Volunteer - Junior Programming Contest (BCC) organized by Bangladesh Computer Council (2025)</li>
-                    <li>Technical Support - IT Fiesta 2024 (CUSS), Inter-University Programming Contest (2024)</li>
-                </ul>
-            </div>
-        </div>
-        
-    <h1 class="heading" id="coursework"><img src="img/education.png" alt="" style="height: 4rem;"> Relevant <span>Coursework</span></h1>
+      <div style="margin-bottom: 3rem;">
+        <h3 style="color: var(--yellow); font-size: 2.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--yellow); padding-bottom: 0.5rem; display: inline-block;">Leadership & Campus Involvement</h3>
+        <ul>
+          <li>Vice President - Shaheed Abdur Rab Hall Career Club, University of Chittagong</li>
+          <li>General Secretary - Nilphamari Student Association, University of Chittagong</li>
+          <li>Vice President - Shaheed Abdur Rab Hall Sports Club, University of Chittagong</li>
+          <li>Member - Computer Vision & Image Processing (CVIP) Research Group</li>
+        </ul>
+      </div>
 
-<div class="box-container">
-    <div class="course-grid">
+      <div style="margin-bottom: 3rem;">
+        <h3 style="color: var(--yellow); font-size: 2.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--yellow); padding-bottom: 0.5rem; display: inline-block;">Volunteer Activities</h3>
+        <ul>
+          <li>Volunteer - Junior Programming Contest (BCC) organized by Bangladesh Computer Council (2025)</li>
+          <li>Technical Support - IT Fiesta 2024 (CUSS), Inter-University Programming Contest (2024)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h1 class="heading" id="coursework"><img src="img/education.png" alt="" class="section-icon"> Relevant <span>Coursework</span></h1>
+
+    <div class="box-container">
+      <div class="course-grid">
         <div class="course-column">
-            <div class="course-category">
-                <h3>Programming & Software Development</h3>
-                <p>• Structured Programming Language<br>
-                   • Object-Oriented Programming Language<br>
-                   • Data Structures<br>
-                   • Design and Analysis of Algorithms<br>
-                   • Software Engineering and Design Patterns<br>
-                   • Compiler Design</p>
-            </div>
+          <div class="course-category">
+            <h3>Programming & Software Development</h3>
+            <p>• Structured Programming Language<br>
+              • Object-Oriented Programming Language<br>
+              • Data Structures<br>
+              • Design and Analysis of Algorithms<br>
+              • Software Engineering and Design Patterns<br>
+              • Compiler Design</p>
+          </div>
 
-            <div class="course-category">
-                <h3>Computer Systems & Architecture</h3>
-                <p>• Introduction to Computer Systems<br>
-                   • Digital Logic Design<br>
-                   • Computer Architecture<br>
-                   • Microprocessors<br>
-                   • Computer Interfacing and Microcontroller<br>
-                   • Operating Systems</p>
-            </div>
+          <div class="course-category">
+            <h3>Computer Systems & Architecture</h3>
+            <p>• Introduction to Computer Systems<br>
+              • Digital Logic Design<br>
+              • Computer Architecture<br>
+              • Microprocessors<br>
+              • Computer Interfacing and Microcontroller<br>
+              • Operating Systems</p>
+          </div>
 
-            <div class="course-category">
-                <h3>Theory & Database</h3>
-                <p>• Theory of Computation<br>
-                   • Database Systems</p>
-            </div>
+          <div class="course-category">
+            <h3>Theory & Database</h3>
+            <p>• Theory of Computation<br>
+              • Database Systems</p>
+          </div>
         </div>
 
         <div class="course-column">
-            <div class="course-category">
-                <h3>Networks & Security</h3>
-                <p>• Data Communication<br>
-                   • Computer Networks<br>
-                   • Information Security<br>
-                   • Distributed and Cloud Computing</p>
-            </div>
+          <div class="course-category">
+            <h3>Networks & Security</h3>
+            <p>• Data Communication<br>
+              • Computer Networks<br>
+              • Information Security<br>
+              • Distributed and Cloud Computing</p>
+          </div>
 
-            <div class="course-category">
-                <h3>AI & Machine Learning</h3>
-                <p>• Artificial Intelligence<br>
-                   • Machine Learning<br>
-                   • Digital Image Processing<br>
-                   • Computer Graphics<br>
-                   • Modeling and Simulation</p>
-            </div>
+          <div class="course-category">
+            <h3>AI & Machine Learning</h3>
+            <p>• Artificial Intelligence<br>
+              • Machine Learning<br>
+              • Digital Image Processing<br>
+              • Computer Graphics<br>
+              • Modeling and Simulation</p>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-    </section>
+  </section>
+  <!-- achievements + coursework section ends -->
 
-     <!-- contact section starts -->
-    <section class="contact" id="contact">
-        <h1 class="heading"> <span>Contact</span> me </h1>
-        <div class="row">
-            <div class="content">
-                <h3 class="title">contact info</h3>
-                <div class="info">
-                    <h3> <i class="fas fa-envelope"></i> opibiswas54@gmail.com</h3>
-                    <a target="_blank" href="https://www.linkedin.com/in/opi-biswas-cse">
-                        <h3> <i class="fab fa-linkedin-in"></i>linkedin.com/in/opi-biswas-cse</h3>
-                    </a>
-                    <a target="_blank" href="https://github.com/Opibiswas">
-                        <h3> <i class="fab fa-github"></i>https://github.com/Opibiswas</h3>
-                    </a>
-                    <h3> <i class="fas fa-phone"></i> +880 1793938041</h3>
-                    <h3> <i class="fas fa-map-marker-alt"></i> Chittagong, Bangladesh</h3>
-                </div>
-            </div>
-
-            <form onsubmit="sendEmail(); reset(); return false;">
-                <input id="nam" name="Name" type="text" placeholder="name" class="box">
-                <input id="emaill" name="Email" type="email" placeholder="email" class="box">
-                <textarea name="Text" id="msg" cols="30" rows="10" class="box message" placeholder="message"></textarea>
-                <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i> </button>
-            </form>
+  <!-- contact section starts -->
+  <section class="contact" id="contact">
+    <h1 class="heading"> <span>Contact</span> me </h1>
+    <div class="row">
+      <div class="content">
+        <h3 class="title">contact info</h3>
+        <div class="info">
+          <h3><i class="fas fa-envelope"></i> opibiswas54@gmail.com</h3>
+          <a target="_blank" href="https://www.linkedin.com/in/opi-biswas-cse">
+            <h3><i class="fab fa-linkedin-in"></i>linkedin.com/in/opi-biswas-cse</h3>
+          </a>
+          <a target="_blank" href="https://github.com/Opibiswas">
+            <h3><i class="fab fa-github"></i>https://github.com/Opibiswas</h3>
+          </a>
+          <h3><i class="fas fa-phone"></i> +880 1793938041</h3>
+          <h3><i class="fas fa-map-marker-alt"></i> Chittagong, Bangladesh</h3>
         </div>
-    </section>
+      </div>
 
-     <!-- scroll top button  -->
+      <form id="contactForm">
+        <input id="nam" name="Name" type="text" placeholder="name" class="box">
+        <input id="emaill" name="Email" type="email" placeholder="email" class="box">
+        <textarea name="Text" id="msg" cols="30" rows="10" class="box message" placeholder="message"></textarea>
+        <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i> </button>
+      </form>
+    </div>
+  </section>
+  <!-- contact section ends -->
 
-    <a href="#home" class="top">
-        <img src="img/scroll-top-img.png" alt="">
-    </a>
+  <!-- scroll top button -->
+  <a href="#home" class="top">
+    <img src="img/scroll-top-img.png" alt="">
+  </a>
 
+  <!-- jquery + smtpjs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-    <!-- jquery cdn link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-
-    <!-- custom js file link -->
-    <script>
-        $(document).ready(function(){
-            $('#menu').click(function(){
-                $(this).toggleClass('fa-times');
-                $('header').toggleClass('toggle');
-                console.log("hi");
-            });
-            
-            $(window).on('scroll load',function(){
-                $('#menu').removeClass('fa-times');
-                $('header').removeClass('toggle');
-                
-                if($(window).scrollTop() > 0){
-                    $('.top').show();
-                }else{
-                    $('.top').hide();
-                }
-            });
-            
-            // smooth scrolling 
-            $('a[href*="#"]').on('click',function(e){
-                e.preventDefault();
-                $('html, body').animate({
-                    scrollTop : $($(this).attr('href')).offset().top,
-                }, 500, 'linear');
-            });
-        });
-
-        function sendEmail() {
-    // Get form values
-    const name = document.getElementById("nam").value.trim();
-    const email = document.getElementById("emaill").value.trim();
-    const message = document.getElementById("msg").value.trim();
-    
-    // Validate form fields (Your existing validation code is good)
-    if (!name || !email || !message) {
-        alert("Please fill in all fields!");
-        return false;
-    }
-    
-    // Show loading
-    const submitBtn = document.querySelector('.contact form button');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-    submitBtn.disabled = true;
-    
-    Email.send({
-        SecureToken: "REPLACE_WITH_NEW_TOKEN_HERE", // Go generate a new one!
-        To: 'opibiswas54@gmail.com',
-        From: 'opibiswas54@gmail.com', // MUST MATCH the account the token belongs to
-        Subject: "Portfolio Contact: " + name,
-        Body: `
-            <h3>New Contact Form Submission</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>From Email:</strong> ${email}</p> <hr>
-            <p><strong>Message:</strong></p>
-            <p>${message.replace(/\n/g, '<br>')}</p>
-        `
-    }).then(
-        function(message) {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            
-            // Check the specific response message from the server
-            if (message === "OK") {
-                alert("✅ Message sent successfully!");
-                document.querySelector('form').reset();
-            } else {
-                // This alerts the ACTUAL error from Elastic Email
-                console.error(message); 
-                alert("❌ Error: " + message);
-            }
-        }
-    );
-    
-    return false;
-}
-    </script>
-
+  <!-- your main js -->
+  <script src="js/main.js"></script>
 </body>
+
 </html>
